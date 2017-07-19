@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+    <div id="container" style="height: 600px; margin: 0 auto"></div>
+
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+    <script type="text/javascript">
+        Highcharts.chart('container', {
+            chart: {
+                zoomType: 'xy'
+            },
+            title: {
+                text: 'Top 3 Acima do Estimado Sprint #9'
+            },
+            subtitle: {
+                text: 'Source: Planilha de Acompanhamento Sprint #9 (Mariana)'
+            },
+            xAxis: [{
+                categories: [
+                    'O evento deve ter recurso de definição de performance e de end Bit depth', 
+                  'Criar builds para o ambiente XPD para o usuário final', 
+                  '[REQ0003.1] Revisão dos critérios de aceitação' 
+                  
+                ],
+                crosshair: true
+            }],
+            plotOptions: {
+                column: {
+                    dataLabels: {
+                        enabled: true,
+                        formatter: function () {
+                            var time = this.y;
+                            var hours1=parseInt(time/3600000);
+                            var mins1=parseInt((parseInt(time%3600000))/60000);
+                            return (hours1 < 10 ? '0' + hours1 : hours1) + ':' + (mins1 < 10 ? '0' + mins1 : mins1);
+                        }
+                    },
+                    enableMouseTracking: false
+                },
+                spline: {
+                    dataLabels: {
+                        enabled: true,
+                        align: 'right',
+                        verticalAlign: "bottom",
+                        format: '{y} %',
+                        backgroundColor: 'black',
+                        color: 'yellow',
+                        shadow: false,
+                        style:{
+                            textOutline: '0px'
+                      }
+                  },
+                }
+            },
+            yAxis: [{ // Primary yAxis
+                labels: {
+                    format: '{value}',
+                    style: {
+                        color: Highcharts.getOptions().colors[1]
+                    },
+                    formatter: function () {
+                        var time = this.value;
+                        var hours1=parseInt(time/3600000);
+                        var mins1=parseInt((parseInt(time%3600000))/60000);
+                        return (hours1 < 10 ? '0' + hours1 : hours1) + ':' + (mins1 < 10 ? '0' + mins1 : mins1);
+                    } 
+                },
+                title: {
+                    text: 'Horas'
+                },
+                max: 46800000
+            }, { // Secondary yAxis
+                title: {
+                    text: '% Diferença'
+                },
+                labels: {
+                    format: '{value} %'
+                },
+                opposite: true
+            }],
+            tooltip: {
+                shared: true
+            },
+            legend: {
+                align: 'center',
+                backgroundColor: (Highcharts.theme && Highcharts.theme.legendBackgroundColor) || '#FFFFFF'
+            },
+            series: [{
+                name: 'Estimado',
+                type: 'column',
+                data: [21600000,28800000, 28800000],
+                color: '#1f77b4'
+            },
+            {
+                name: 'Executado',
+                type: 'column',
+                data: [44100000,38100000, 34200000],
+                color: ' #d6616b'
+            },{
+                name: '% Diferença',
+                type: 'spline',
+                yAxis: 1,
+                data: [104, 32, 19],
+                color: '#ecce00',
+                tooltip: {
+                    valueSuffix: ' %'
+                }
+
+            }]
+        });
+    </script>
+</body>
+</html>
+
+
