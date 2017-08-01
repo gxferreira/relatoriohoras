@@ -14,20 +14,25 @@
 		        zoomType: 'xy'
 		    },
 		    title: {
-		        text: 'Top 6 Abaixo do Estimado Sprint #9'
+		        text: 'Top 6 Abaixo do Estimado Sprint #10'
 		    },
 		    subtitle: {
-		        text: 'Source: Planilha de Acompanhamento Sprint #9 (Mariana)'
+		        text: 'Source: Planilha de Acompanhamento Sprint #10 (Mariana)'
 		    },
 		    xAxis: [{
 		        categories: [
-					'Tutorial e modificação do acesso XPD', 
-					'Desenhar curva do Executado a partir da primeiração operação', 
-					'Processar dados dos eventos', 
-					'Instalar o ambiente XPD na máquina de apresentação', 
-					'Diferenciar cores na curva do Executado',
-					'Calcular Hole Depth'
+					'Adaptação do sistema para o teste automatizado #1',
+					'Adicionar features pilotos dentro do modelo',
+					'Automatização dos teste #1',
+					'Adaptação do sistema para o teste automatizado #3',
+					'Automatização dos teste #2',
+					'Automatização dos teste #3'
 		        ],
+		        labels:{
+		        	style:{
+	                	fontSize: '14px'
+	                }
+		        },
 		        crosshair: true
 		    }],
 		    plotOptions: {
@@ -39,6 +44,9 @@
 		                    var hours1=parseInt(time/3600000);
 		                    var mins1=parseInt((parseInt(time%3600000))/60000);
 		                    return (hours1 < 10 ? '0' + hours1 : hours1) + ':' + (mins1 < 10 ? '0' + mins1 : mins1);
+		                },
+		                style:{
+		                	fontSize: '14px'
 		                }
 		            },
 		            enableMouseTracking: false
@@ -53,7 +61,8 @@
 		                color: 'yellow',
 		                shadow: false,
 		                style:{
-		                	textOutline: '0px'
+		                	textOutline: '0px',
+		                	fontSize: '14px'
 		              }
 		          },
 		        }
@@ -62,7 +71,8 @@
 		        labels: {
 		            format: '{value}',
 		            style: {
-		                color: Highcharts.getOptions().colors[1]
+		                color: Highcharts.getOptions().colors[1],
+		                fontSize:'14px'
 		            },
 		            formatter: function () {
 		                var time = this.value;
@@ -73,8 +83,8 @@
 		        },
 		        title: {
 		            text: 'Horas'
-		        },
-		        max: 57600000
+		        }/*,
+		        max: 57600000*/
 		    }, { // Secondary yAxis
 		        title: {
 		            text: '% Diferença'
@@ -89,24 +99,27 @@
 		    },
 		    legend: {
 		        align: 'center',
-		        backgroundColor: (Highcharts.theme && Highcharts.theme.legendBackgroundColor) || '#FFFFFF'
+		        backgroundColor: (Highcharts.theme && Highcharts.theme.legendBackgroundColor) || '#FFFFFF',
+		        itemStyle: {
+					fontSize: '14px'
+				}
 		    },
 		    series: [{
 		        name: 'Estimado',
 		        type: 'column',
-		        data: [28800000,57600000, 28800000, 28800000, 14400000,14400000],
+		        data: [43200000, 28800000, 43200000, 28800000, 28800000, 28800000],
 		        color: '#0093FF'
 		    },
 		    {
 		        name: 'Executado',
 		        type: 'column',
-		        data: [1800000,21600000,12600000,14400000, 10800000,10800000],
+		        data: [10800000, 10800000, 19800000, 14400000, 25200000, 25200000],
 		        color: ' #00B315'
 		    },{
 		        name: '% Diferença',
 		        type: 'spline',
 		        yAxis: 1,
-		        data: [94, 63, 56, 50, 25,25],
+		        data: [75, 63, 54, 50, 13, 13],
 		        color: '#ecce00',
 		        tooltip: {
 		            valueSuffix: ' %'
