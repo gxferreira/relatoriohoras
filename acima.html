@@ -14,18 +14,17 @@
                 zoomType: 'xy'
             },
             title: {
-                text: 'Top 5 Acima do Estimado Sprint #10'
+                text: 'Issues Acima do Estimado Sprint #11'
             },
             subtitle: {
-                text: 'Source: Planilha de Acompanhamento Sprint #10 (Mariana)'
+                text: 'Source: Planilha de Acompanhamento Sprint #11 (Mariana)'
             },
             xAxis: [{
                 categories: [
-                    'Especificação de padrões para o Modelo e Regras de Negócio', 
-                    'Modelagem das features existentes', 
-                    'Adaptação do sistema para o teste automatizado #2 (BHA Laydown)', 
-                    'Pesquisa sobre melhores práticas e aplicação do Cucumber', 
-                    'Instalação e configuração do Jenkins na máquina de apresentação', 
+                    'Escrever e automatizar features de Operações de TIME', 
+                    'Escrever e automatizar features de Drilling', 
+                    'Mecanismo de validação paralela', 
+                    'Melhoria na interface do mecanismo paralelo'
                 ],
                 labels:{
                     style:{
@@ -109,19 +108,19 @@
             series: [{
                 name: 'Estimado',
                 type: 'column',
-                data: [57600000,43200000, 28800000, 86400000, 28800000],
+                data: [28800000,14400000,57600000,28800000],
                 color: '#1f77b4'
             },
             {
                 name: 'Executado',
                 type: 'column',
-                data: [108000000, 70200000, 43200000, 117900000, 36000000],
+                data: [92700000,30600000,97200000,43200000],
                 color: ' #d6616b'
             },{
                 name: '% Diferença',
                 type: 'spline',
                 yAxis: 1,
-                data: [88, 63, 50, 36, 25],
+                data: [222, 113, 69, 50],
                 color: '#ecce00',
                 tooltip: {
                     valueSuffix: ' %'

@@ -14,19 +14,18 @@
 		        zoomType: 'xy'
 		    },
 		    title: {
-		        text: 'Top 6 Abaixo do Estimado Sprint #10'
+		        text: 'Issues Abaixo do Estimado Sprint #11'
 		    },
 		    subtitle: {
-		        text: 'Source: Planilha de Acompanhamento Sprint #10 (Mariana)'
+		        text: 'Source: Planilha de Acompanhamento Sprint #11 (Mariana)'
 		    },
 		    xAxis: [{
 		        categories: [
-					'Adaptação do sistema para o teste automatizado #1 (BHA Assembly)',
-					'Adicionar features pilotos dentro do modelo',
-					'Automatização do teste #1 (BHA Assembly)',
-					'Adaptação do sistema para o teste automatizado #3 (Make Connection)',
-					'Automatização do teste #2 (BHA Laydown)',
-					'Automatização do teste #3 (Make Connection)'
+					'Escrever e Automatizar features de Make Connection',
+					'Escrever e automatizar features de Cementing',
+					'Escrever e Automatizar features de Drill String',
+					'Formalização matemática do cálculo do VRE e VRE Relativo',
+					'Escrever e Automatizar features de Break Connection'
 		        ],
 		        labels:{
 		        	style:{
@@ -107,19 +106,19 @@
 		    series: [{
 		        name: 'Estimado',
 		        type: 'column',
-		        data: [43200000, 28800000, 43200000, 28800000, 28800000, 28800000],
+		        data: [28800000, 28800000, 21600000, 36000000, 14400000],
 		        color: '#0093FF'
 		    },
 		    {
 		        name: 'Executado',
 		        type: 'column',
-		        data: [10800000, 10800000, 19800000, 14400000, 25200000, 25200000],
+		        data: [3600000, 4500000, 5400000, 12600000, 5400000],
 		        color: ' #00B315'
 		    },{
 		        name: '% Diferença',
 		        type: 'spline',
 		        yAxis: 1,
-		        data: [75, 63, 54, 50, 13, 13],
+		        data: [88, 84, 75, 65, 63],
 		        color: '#ecce00',
 		        tooltip: {
 		            valueSuffix: ' %'
